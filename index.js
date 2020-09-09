@@ -1,6 +1,6 @@
 var http = require('http');
 
-const requestsPerSecondPerfThreshold = 1; //When do we start breaking
+const requestsPerSecondPerfThreshold = 50; //When do we start breaking
 const listenPort = 8080;
 
 let requestsPerMinute = 0;
@@ -33,7 +33,8 @@ http.createServer(function (req, res) {
         <p>I'm a web app that struggles with requests over ${requestsPerSecondPerfThreshold} req/sec. I start responding with a mix of 200, 429 and 500 after that.</p>
         <p>I've had ${requestsPerMinute} requests for the current minute ${currentMinute}, which is:</p>
         <h2>${requestsPerSecond} req/sec</h2> 
-        <p>I have responded with <h2>${statusCode}<h2></p>        
+        <p>I have responded with <h2>${statusCode}</h2></p>
+        <pre>Timestamp: ${new Date()}</pre>        
       </body>
     </html>`);     
     res.end()

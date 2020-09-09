@@ -1,0 +1,21 @@
+{
+  "name": "target-web-app",
+  "version": "0.1.0",
+  "description": "Node web server which simulates a web that struggles under load. It returns regular 429s and 500s after 100 req/sec",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dockerize": "docker build -t stevenpack/target-web-app .",
+    "publish": "docker push stevenpack/target-web-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenpack/target-web-app.git"
+  },
+  "author": "Steven Pack <steven.pack.code@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevenpack/target-web-app/issues"
+  },
+  "homepage": "https://github.com/stevenpack/target-web-app#readme"
+}
